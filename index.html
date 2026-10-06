@@ -1,0 +1,973 @@
+<!doctype html>
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta content="width=device-width, initial-scale=1.0" name="viewport" />
+		<title>
+			Design Principles &amp; Philosophy | Interactive 1-Slide Portfolio
+		</title>
+		<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+		<link href="https://fonts.googleapis.com" rel="preconnect" />
+		<link
+			crossorigin=""
+			href="https://fonts.gstatic.com"
+			rel="preconnect"
+		/>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;500;600;700&amp;display=swap"
+			rel="stylesheet"
+		/>
+		<script>
+			tailwind.config = {
+				darkMode: "class",
+				theme: {
+					extend: {
+						fontFamily: {
+							sans: ['"Plus Jakarta Sans"', "sans-serif"],
+							mono: ['"JetBrains Mono"', "monospace"],
+						},
+						colors: {
+							paper: {
+								50: "#FFFFFF",
+								100: "#FAF8F5",
+								200: "#F4EFEA",
+							},
+							ink: {
+								900: "#0F172A",
+								800: "#1E293B",
+								700: "#334155",
+								600: "#475569",
+								500: "#64748B",
+								400: "#94A3B8",
+							},
+						},
+					},
+				},
+			};
+		</script>
+		<style>
+			@media print {
+				@page {
+					size: A4 landscape;
+					margin: 8mm;
+				}
+				body {
+					background: #ffffff !important;
+					color: #0f172a !important;
+					padding: 0 !important;
+					-webkit-print-color-adjust: exact !important;
+					print-color-adjust: exact !important;
+				}
+				.no-print {
+					display: none !important;
+				}
+				.slide-container {
+					box-shadow: none !important;
+					border: 1px solid #cbd5e1 !important;
+					width: 100% !important;
+					max-width: none !important;
+					margin: 0 !important;
+					page-break-after: avoid !important;
+					break-inside: avoid !important;
+					border-radius: 6px !important;
+					padding: 20px 24px !important;
+				}
+			}
+			.custom-scrollbar::-webkit-scrollbar {
+				width: 4px;
+				height: 4px;
+			}
+			.custom-scrollbar::-webkit-scrollbar-thumb {
+				background: rgba(148, 163, 184, 0.4);
+				border-radius: 4px;
+			}
+		</style>
+	</head>
+	<body
+		class="bg-[#F8F9FA] text-ink-900 min-h-screen font-sans selection:bg-indigo-100 selection:text-indigo-900 flex flex-col items-center justify-center p-3 md:p-6 lg:p-8 antialiased"
+	>
+		<!-- Top Action Toolbar -->
+		<header
+			class="w-full max-w-[1440px] mb-4 flex flex-wrap items-center justify-between gap-3 px-2 no-print"
+		>
+			<div class="flex items-center gap-2">
+				<div
+					class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-slate-200 text-xs font-medium text-slate-700 shadow-sm"
+				>
+					<span
+						class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"
+					></span>
+					Portfolio Visual Artifact • Executive Summary
+				</div>
+			</div>
+			<!-- Controls -->
+			<div class="flex items-center gap-2">
+				<button
+					class="px-4 py-1.5 rounded-lg bg-slate-900 hover:bg-slate-800 text-xs font-semibold text-white transition-all flex items-center gap-1.5 shadow-sm shadow-slate-900/10 active:scale-95"
+					onclick="window.print()"
+				>
+					<svg
+						class="w-3.5 h-3.5 text-slate-200"
+						fill="none"
+						stroke="currentColor"
+						viewbox="0 0 24 24"
+					>
+						<path
+							d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							stroke-width="2"
+						></path>
+					</svg>
+					Export PDF / Print
+				</button>
+			</div>
+		</header>
+		<!-- 1-SLIDE CONTAINER (Editorial Print Sheet: Crisp White, Subtle Border, Premium Typography) -->
+		<main
+			class="slide-container w-full max-w-[1440px] bg-white border border-slate-200/90 rounded-2xl shadow-[0_10px_35px_-8px_rgba(15,23,42,0.07)] p-6 md:p-8 lg:p-9 flex flex-col justify-between relative overflow-hidden transition-all duration-300"
+		>
+			<!-- Subtle Sheet Accent Gradients for Tactile Depth -->
+			<div
+				class="absolute -top-32 -left-32 w-80 h-80 bg-slate-100/60 rounded-full blur-3xl pointer-events-none"
+			></div>
+			<div
+				class="absolute -bottom-32 -right-32 w-80 h-80 bg-indigo-50/50 rounded-full blur-3xl pointer-events-none"
+			></div>
+			<!-- Header Block -->
+			<div
+				class="border-b border-slate-200 pb-5 mb-5 flex flex-col md:flex-row md:items-end justify-between gap-4 relative z-10"
+			>
+				<div>
+					<div class="flex items-center gap-2 mb-2">
+						<span
+							class="px-2.5 py-0.5 rounded bg-indigo-50 border border-indigo-200/80 text-indigo-900 font-mono text-[11px] font-bold tracking-wider uppercase"
+							>Product Design Leadership</span
+						>
+						<span class="text-slate-300">•</span>
+						<span
+							class="text-slate-500 text-xs font-semibold uppercase tracking-wider font-mono"
+							>Design Systems &amp; Philosophy</span
+						>
+					</div>
+					<h1
+						class="text-2xl md:text-3xl lg:text-[34px] font-extrabold tracking-tight text-ink-900 flex items-center gap-3"
+					>
+						Product Design Principles
+					</h1>
+					<p
+						class="text-xs md:text-sm text-ink-600 mt-1.5 max-w-3xl leading-relaxed"
+					>
+						Four foundational pillars transforming complex
+						education, payroll, and financial workflows into clear,
+						resilient, and human-centered digital experiences.
+					</p>
+				</div>
+				<!-- Quick Metrics / Designer Info Tag (Print Card Style) -->
+				<div
+					class="flex items-center gap-3 bg-slate-50/80 border border-slate-200/90 rounded-xl px-4 py-2.5 self-start md:self-auto shrink-0 shadow-sm"
+				>
+					<div
+						class="w-10 h-10 rounded-lg bg-slate-900 flex items-center justify-center text-white font-bold text-sm tracking-wider shadow-sm"
+					>
+						AP
+					</div>
+					<div>
+						<div
+							class="text-xs font-bold text-ink-900 tracking-wide"
+						>
+							Product Designer
+						</div>
+						<div class="text-[11px] text-slate-500 font-mono">
+							Admission • Payroll • Analytics
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- 4 Principles Grid (2x2 Balanced Matrix in Editorial Light Surface Cards) -->
+			<div
+				class="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-5 flex-grow relative z-10"
+			>
+				<!-- ==============================================
+              PRINCIPLE 1: Trust Through Transparency
+        ============================================== -->
+				<article
+					class="group bg-[#FAFAFA] hover:bg-white border border-slate-200 hover:border-slate-300 rounded-xl p-4 lg:p-5 flex flex-col justify-between transition-all duration-200 shadow-[0_1px_3px_rgba(0,0,0,0.03)] hover:shadow-md"
+				>
+					<div>
+						<!-- Card Header -->
+						<div
+							class="flex items-start justify-between gap-3 mb-2.5"
+						>
+							<div class="flex items-center gap-2.5">
+								<span
+									class="w-8 h-8 rounded-lg bg-indigo-50 border border-indigo-200 flex items-center justify-center text-indigo-800 font-bold text-sm font-mono shadow-sm"
+								>
+									01
+								</span>
+								<div>
+									<span
+										class="text-[10px] font-mono tracking-widest uppercase text-indigo-700 font-bold block"
+										>Principle 1</span
+									>
+									<h2
+										class="text-base lg:text-lg font-bold text-ink-900 group-hover:text-indigo-900 transition-colors"
+									>
+										Trust Through Transparency
+									</h2>
+								</div>
+							</div>
+							<span
+								class="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-semibold bg-emerald-50 text-emerald-800 border border-emerald-200 shrink-0"
+							>
+								Confidence +84%
+							</span>
+						</div>
+						<!-- Description -->
+						<p class="text-xs text-ink-600 leading-relaxed mb-3">
+							Users feel anxiety when money or critical workflows
+							move invisibly. Show real-time state, pending steps,
+							and expected arrival times—honesty dramatically
+							lowers support tickets.
+						</p>
+						<!-- Interactive Visual Comparison: Bad vs Good (Paper / Print Contrast) -->
+						<div class="space-y-2 mb-3">
+							<div
+								class="flex items-center justify-between text-[11px] font-mono"
+							>
+								<span
+									class="text-slate-500 font-semibold uppercase text-[10px] tracking-wide"
+									>Workflow Visibility Contrast</span
+								>
+								<button
+									class="text-indigo-600 hover:text-indigo-800 font-medium text-[10px] underline decoration-indigo-300 cursor-pointer"
+									onclick="toggleP1()"
+								>
+									Toggle Detail
+								</button>
+							</div>
+							<div
+								class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs"
+							>
+								<!-- Left: Hidden status (Poor UX - Light Warm Rose) -->
+								<div
+									class="p-2.5 rounded-lg bg-rose-50/80 border border-rose-200 relative"
+								>
+									<div
+										class="flex items-center justify-between mb-1.5"
+									>
+										<span
+											class="text-[10px] font-mono font-bold uppercase text-rose-800 flex items-center gap-1"
+										>
+											<svg
+												class="w-3 h-3 text-rose-600"
+												fill="none"
+												stroke="currentColor"
+												viewbox="0 0 24 24"
+											>
+												<path
+													d="M6 18L18 6M6 6l12 12"
+													stroke-linecap="round"
+													stroke-linejoin="round"
+													stroke-width="2.5"
+												></path>
+											</svg>
+											Opaque / Ambiguous
+										</span>
+										<span
+											class="text-[9px] text-rose-700 font-mono font-medium"
+											>High Anxiety</span
+										>
+									</div>
+									<div
+										class="bg-white rounded p-2 border border-rose-100 text-[11px] shadow-2xs"
+									>
+										<div
+											class="flex items-center gap-2 text-rose-900"
+										>
+											<span
+												class="w-2 h-2 rounded-full bg-amber-500 animate-pulse"
+											></span>
+											<span
+												class="font-semibold text-rose-950"
+												>Please wait...</span
+											>
+										</div>
+										<div
+											class="text-[10px] text-slate-500 mt-1"
+										>
+											Processing your request. Do not
+											refresh.
+										</div>
+									</div>
+								</div>
+								<!-- Right: Clear Status (Applied UX - Light Crisp Emerald) -->
+								<div
+									class="p-2.5 rounded-lg bg-emerald-50/70 border border-emerald-200 relative"
+								>
+									<div
+										class="flex items-center justify-between mb-1.5"
+									>
+										<span
+											class="text-[10px] font-mono font-bold uppercase text-emerald-800 flex items-center gap-1"
+										>
+											<svg
+												class="w-3 h-3 text-emerald-600"
+												fill="none"
+												stroke="currentColor"
+												viewbox="0 0 24 24"
+											>
+												<path
+													d="M5 13l4 4L19 7"
+													stroke-linecap="round"
+													stroke-linejoin="round"
+													stroke-width="2.5"
+												></path>
+											</svg>
+											Transparent / Predictable
+										</span>
+										<span
+											class="text-[9px] text-emerald-700 font-mono font-medium"
+											>Zero Confusion</span
+										>
+									</div>
+									<div
+										class="bg-white rounded p-2 border border-emerald-100 text-[11px] space-y-1.5 shadow-2xs"
+									>
+										<div
+											class="flex items-center justify-between"
+										>
+											<span
+												class="text-emerald-800 font-bold flex items-center gap-1.5"
+											>
+												<span
+													class="w-2 h-2 rounded-full bg-emerald-500"
+												></span>
+												₹48,500 Received
+											</span>
+											<span
+												class="text-[9px] font-mono text-slate-500 font-semibold"
+												>Step 2 of 3</span
+											>
+										</div>
+										<!-- Progress Bar -->
+										<div
+											class="w-full bg-slate-100 rounded-full h-1.5 overflow-hidden flex"
+										>
+											<div
+												class="bg-emerald-600 h-full w-2/3"
+											></div>
+											<div
+												class="bg-amber-400 h-full w-1/3"
+											></div>
+										</div>
+										<div
+											class="text-[10px] text-slate-600 flex justify-between pt-0.5"
+										>
+											<span
+												class="text-slate-600 font-medium"
+												>Verifying bank docs</span
+											>
+											<span
+												class="text-amber-800 font-semibold font-mono text-[9.5px]"
+												>~1 hr 45 min left</span
+											>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- How It Was Applied -->
+					<div
+						class="pt-2.5 border-t border-slate-200 flex items-center justify-between gap-2 text-[11px]"
+					>
+						<div class="flex items-center gap-1.5 text-slate-600">
+							<span class="font-bold text-slate-800"
+								>Applied in:</span
+							>
+							<span
+								>Admission fee tracker &amp; Payroll
+								disbursement timeline</span
+							>
+						</div>
+						<span
+							class="text-[10px] font-mono font-semibold text-indigo-700 bg-indigo-50 px-2 py-0.5 rounded border border-indigo-200"
+							>Admission</span
+						>
+					</div>
+				</article>
+				<!-- ==============================================
+           PRINCIPLE 2: Complexity Layered, Not Flattened
+           ============================================== -->
+				<article
+					class="group bg-[#FAFAFA] hover:bg-white border border-slate-200 hover:border-slate-300 rounded-xl p-4 lg:p-5 flex flex-col justify-between transition-all duration-200 shadow-[0_1px_3px_rgba(0,0,0,0.03)] hover:shadow-md"
+				>
+					<div>
+						<!-- Card Header -->
+						<div
+							class="flex items-start justify-between gap-3 mb-2.5"
+						>
+							<div class="flex items-center gap-2.5">
+								<span
+									class="w-8 h-8 rounded-lg bg-indigo-50 border border-indigo-200 flex items-center justify-center text-indigo-800 font-bold text-sm font-mono shadow-sm"
+								>
+									02
+								</span>
+								<div>
+									<span
+										class="text-[10px] font-mono tracking-widest uppercase text-indigo-700 font-bold block"
+										>Principle 2</span
+									>
+									<h2
+										class="text-base lg:text-lg font-bold text-ink-900 group-hover:text-indigo-900 transition-colors"
+									>
+										Complexity Layered, Not Flattened
+									</h2>
+								</div>
+							</div>
+							<span
+								class="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-semibold bg-blue-50 text-blue-800 border border-blue-200 shrink-0"
+							>
+								Progressive Disclosure
+							</span>
+						</div>
+						<!-- Description -->
+						<p class="text-xs text-ink-600 leading-relaxed mb-3">
+							Heavy institutional processes cannot fit comfortably
+							on one flat screen. Keep top-level summaries clear,
+							hiding granular tax rules and deductions behind
+							intuitive progressive disclosures.
+						</p>
+						<!-- Interactive Component: Progressive Layering Demo (Light Paper Card) -->
+						<div
+							class="bg-white border border-slate-200 rounded-lg p-2.5 mb-3 text-xs shadow-2xs"
+						>
+							<div
+								class="flex items-center justify-between pb-2 border-b border-slate-100"
+							>
+								<div>
+									<span
+										class="text-[10px] text-slate-500 uppercase font-mono font-semibold"
+										>Net Payout (October 2024)</span
+									>
+									<div
+										class="text-base font-extrabold text-ink-900 flex items-center gap-2 mt-0.5"
+									>
+										₹84,250.00
+										<span
+											class="text-[10px] font-semibold text-emerald-800 bg-emerald-50 border border-emerald-200 px-1.5 py-0.5 rounded"
+											>+4.2% YoY</span
+										>
+									</div>
+								</div>
+								<button
+									class="px-2.5 py-1 rounded bg-slate-100 hover:bg-slate-200 text-slate-800 text-[10px] font-semibold transition-colors flex items-center gap-1 border border-slate-300 active:scale-95"
+									id="p2ExpandBtn"
+									onclick="toggleP2()"
+								>
+									<span id="p2BtnText">Show Breakdown</span>
+									<svg
+										class="w-3 h-3 text-slate-600 transform transition-transform"
+										fill="none"
+										id="p2Icon"
+										stroke="currentColor"
+										viewbox="0 0 24 24"
+									>
+										<path
+											d="M19 9l-7 7-7-7"
+											stroke-linecap="round"
+											stroke-linejoin="round"
+											stroke-width="2"
+										></path>
+									</svg>
+								</button>
+							</div>
+							<!-- Layer 2 Details (Collapsible interactive) -->
+							<div
+								class="hidden pt-2.5 space-y-2 transition-all"
+								id="p2Details"
+							>
+								<div class="grid grid-cols-3 gap-2 text-[10px]">
+									<div
+										class="bg-slate-50 p-2 rounded border border-slate-200"
+									>
+										<div class="text-slate-500 font-medium">
+											Basic &amp; HRA
+										</div>
+										<div
+											class="font-bold text-slate-900 text-[11px] mt-0.5"
+										>
+											₹92,000
+										</div>
+									</div>
+									<div
+										class="bg-slate-50 p-2 rounded border border-slate-200"
+									>
+										<div class="text-slate-500 font-medium">
+											Provident Fund
+										</div>
+										<div
+											class="font-bold text-rose-700 text-[11px] mt-0.5"
+										>
+											-₹5,250
+										</div>
+									</div>
+									<div
+										class="bg-slate-50 p-2 rounded border border-slate-200"
+									>
+										<div class="text-slate-500 font-medium">
+											TDS / Income Tax
+										</div>
+										<div
+											class="font-bold text-rose-700 text-[11px] mt-0.5"
+										>
+											-₹2,500
+										</div>
+									</div>
+								</div>
+								<div
+									class="text-[9.5px] text-slate-500 flex items-center justify-between pt-0.5"
+								>
+									<span
+										>Direct deposit to HDFC •••• 8291</span
+									>
+									<span
+										class="text-indigo-600 font-semibold font-mono hover:underline cursor-pointer"
+										>Export Salary Slip (.PDF) →</span
+									>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- How It Was Applied -->
+					<div
+						class="pt-2.5 border-t border-slate-200 flex items-center justify-between gap-2 text-[11px]"
+					>
+						<div class="flex items-center gap-1.5 text-slate-600">
+							<span class="font-bold text-slate-800"
+								>Applied in:</span
+							>
+							<span
+								>Staff payroll overview + Analytics cohort
+								drill-down</span
+							>
+						</div>
+						<span
+							class="text-[10px] font-mono font-semibold text-indigo-700 bg-indigo-50 px-2 py-0.5 rounded border border-indigo-200"
+							>Payroll &amp; Analytics</span
+						>
+					</div>
+				</article>
+				<!-- ==============================================
+           PRINCIPLE 3: Role-Based Access, Role-Based Views
+           ============================================== -->
+				<article
+					class="group bg-[#FAFAFA] hover:bg-white border border-slate-200 hover:border-slate-300 rounded-xl p-4 lg:p-5 flex flex-col justify-between transition-all duration-200 shadow-[0_1px_3px_rgba(0,0,0,0.03)] hover:shadow-md"
+				>
+					<div>
+						<!-- Card Header -->
+						<div
+							class="flex items-start justify-between gap-3 mb-2.5"
+						>
+							<div class="flex items-center gap-2.5">
+								<span
+									class="w-8 h-8 rounded-lg bg-indigo-50 border border-indigo-200 flex items-center justify-center text-indigo-800 font-bold text-sm font-mono shadow-sm"
+								>
+									03
+								</span>
+								<div>
+									<span
+										class="text-[10px] font-mono tracking-widest uppercase text-indigo-700 font-bold block"
+										>Principle 3</span
+									>
+									<h2
+										class="text-base lg:text-lg font-bold text-ink-900 group-hover:text-indigo-900 transition-colors"
+									>
+										Role-Based Access, Role-Based Views
+									</h2>
+								</div>
+							</div>
+							<span
+								class="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-semibold bg-purple-50 text-purple-800 border border-purple-200 shrink-0"
+							>
+								Context-Aware UI
+							</span>
+						</div>
+						<!-- Description -->
+						<p class="text-xs text-ink-600 leading-relaxed mb-3">
+							One single codebase and system architecture,
+							customized by persona intent. Administrators approve
+							batch actions; staff review personal earnings;
+							leadership tracks school-wide trends.
+						</p>
+						<!-- Interactive Persona Switcher -->
+						<div
+							class="bg-white border border-slate-200 rounded-lg p-2.5 mb-3 text-xs shadow-2xs"
+						>
+							<div class="flex items-center justify-between mb-2">
+								<span
+									class="text-[10px] font-mono text-slate-500 uppercase font-semibold"
+									>Simulate By Role:</span
+								>
+								<div
+									class="flex bg-slate-100 rounded-lg p-0.5 border border-slate-200"
+									role="tablist"
+								>
+									<button
+										class="px-2 py-0.5 rounded-md text-[10px] font-bold bg-slate-900 text-white shadow-xs transition-all"
+										id="roleBtn-admin"
+										onclick="setRole('admin')"
+									>
+										Principal / Admin
+									</button>
+									<button
+										class="px-2 py-0.5 rounded-md text-[10px] font-semibold text-slate-600 hover:text-slate-900 transition-all"
+										id="roleBtn-staff"
+										onclick="setRole('staff')"
+									>
+										Teacher / Staff
+									</button>
+									<button
+										class="px-2 py-0.5 rounded-md text-[10px] font-semibold text-slate-600 hover:text-slate-900 transition-all"
+										id="roleBtn-parent"
+										onclick="setRole('parent')"
+									>
+										Parent View
+									</button>
+								</div>
+							</div>
+							<!-- Role Mockups Container -->
+							<div
+								class="p-2.5 rounded-md bg-slate-50 border border-slate-200 text-[11px]"
+								id="roleContent"
+							>
+								<!-- Admin Content (Default) -->
+								<div class="space-y-1.5" id="role-admin">
+									<div
+										class="flex items-center justify-between"
+									>
+										<span class="text-slate-900 font-bold"
+											>142 Pending Staff Payroll
+											Approvals</span
+										>
+										<span
+											class="px-1.5 py-0.5 rounded bg-amber-50 text-amber-900 font-semibold text-[9px] border border-amber-200"
+											>Action Required</span
+										>
+									</div>
+									<div
+										class="flex items-center justify-between text-[10px] text-slate-600"
+									>
+										<span
+											>Total Disbursement:
+											<strong class="text-slate-800"
+												>₹48.2 Lakhs</strong
+											></span
+										>
+										<button
+											class="text-indigo-600 font-bold hover:underline"
+										>
+											Batch Approve All (142) →
+										</button>
+									</div>
+								</div>
+								<!-- Staff Content -->
+								<div class="hidden space-y-1.5" id="role-staff">
+									<div
+										class="flex items-center justify-between"
+									>
+										<span class="text-slate-900 font-bold"
+											>October Paycheck Cleared</span
+										>
+										<span
+											class="px-1.5 py-0.5 rounded bg-emerald-50 text-emerald-800 font-semibold text-[9px] border border-emerald-200"
+											>Deposited</span
+										>
+									</div>
+									<div
+										class="flex items-center justify-between text-[10px] text-slate-600"
+									>
+										<span
+											>Net Salary:
+											<strong class="text-slate-800"
+												>₹68,400</strong
+											></span
+										>
+										<button
+											class="text-indigo-600 font-bold hover:underline"
+										>
+											Download Tax Form 16 →
+										</button>
+									</div>
+								</div>
+								<!-- Parent Content -->
+								<div
+									class="hidden space-y-1.5"
+									id="role-parent"
+								>
+									<div
+										class="flex items-center justify-between"
+									>
+										<span class="text-slate-900 font-bold"
+											>Term 2 School Tuition Due</span
+										>
+										<span
+											class="px-1.5 py-0.5 rounded bg-indigo-50 text-indigo-800 font-semibold text-[9px] border border-indigo-200"
+											>Due in 5 Days</span
+										>
+									</div>
+									<div
+										class="flex items-center justify-between text-[10px] text-slate-600"
+									>
+										<span
+											>Student:
+											<strong class="text-slate-800"
+												>Aarav Sharma (Grade
+												8-B)</strong
+											></span
+										>
+										<button
+											class="text-emerald-700 font-bold hover:underline"
+										>
+											Quick Pay via UPI →
+										</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- How It Was Applied -->
+					<div
+						class="pt-2.5 border-t border-slate-200 flex items-center justify-between gap-2 text-[11px]"
+					>
+						<div class="flex items-center gap-1.5 text-slate-600">
+							<span class="font-bold text-slate-800"
+								>Applied in:</span
+							>
+							<span
+								>Institutional access matrix (Leadership vs
+								Teacher vs Student)</span
+							>
+						</div>
+						<span
+							class="text-[10px] font-mono font-semibold text-indigo-700 bg-indigo-50 px-2 py-0.5 rounded border border-indigo-200"
+							>Access Architecture</span
+						>
+					</div>
+				</article>
+				<!-- ==============================================
+           PRINCIPLE 4: Error States Are First-Class Features
+           ============================================== -->
+				<article
+					class="group bg-[#FAFAFA] hover:bg-white border border-slate-200 hover:border-slate-300 rounded-xl p-4 lg:p-5 flex flex-col justify-between transition-all duration-200 shadow-[0_1px_3px_rgba(0,0,0,0.03)] hover:shadow-md"
+				>
+					<div>
+						<!-- Card Header -->
+						<div
+							class="flex items-start justify-between gap-3 mb-2.5"
+						>
+							<div class="flex items-center gap-2.5">
+								<span
+									class="w-8 h-8 rounded-lg bg-indigo-50 border border-indigo-200 flex items-center justify-center text-indigo-800 font-bold text-sm font-mono shadow-sm"
+								>
+									04
+								</span>
+								<div>
+									<span
+										class="text-[10px] font-mono tracking-widest uppercase text-indigo-700 font-bold block"
+										>Principle 4</span
+									>
+									<h2
+										class="text-base lg:text-lg font-bold text-ink-900 group-hover:text-indigo-900 transition-colors"
+									>
+										Error States Are First-Class Features
+									</h2>
+								</div>
+							</div>
+							<span
+								class="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-semibold bg-amber-50 text-amber-900 border border-amber-200 shrink-0"
+							>
+								Graceful Recovery
+							</span>
+						</div>
+						<!-- Description -->
+						<p class="text-xs text-ink-600 leading-relaxed mb-3">
+							Failures happen in high-volume admission and payment
+							cycles. Treat every error as an opportunity to
+							reinforce trust: state what broke, why it happened,
+							and the exact remedy.
+						</p>
+						<!-- Interactive Error Resolution Component (Crisp Paper Light Tone) -->
+						<div
+							class="bg-white border border-slate-200 rounded-lg p-2.5 mb-3 text-xs shadow-2xs"
+						>
+							<div
+								class="flex items-center justify-between mb-1.5"
+							>
+								<span
+									class="text-[10px] font-mono text-slate-500 uppercase font-semibold"
+									>Contextual Exception Handling:</span
+								>
+								<span
+									class="text-[9.5px] font-mono font-bold text-emerald-800 bg-emerald-50 px-1.5 py-0.5 rounded border border-emerald-200"
+									>99.4% Self-Recovery</span
+								>
+							</div>
+							<!-- Simulated Error UI -->
+							<div
+								class="p-2.5 rounded-lg bg-amber-50/70 border border-amber-200 flex items-start gap-2.5"
+							>
+								<div
+									class="w-6 h-6 rounded bg-amber-100 border border-amber-300 flex items-center justify-center text-amber-900 font-bold shrink-0 text-xs shadow-2xs"
+								>
+									!
+								</div>
+								<div class="space-y-1 flex-1">
+									<div
+										class="flex items-center justify-between"
+									>
+										<h3
+											class="text-[11px] font-bold text-amber-950"
+										>
+											Bank Gateway Timeout (Code:
+											HDFC_504)
+										</h3>
+										<span
+											class="text-[9px] text-slate-500 font-mono font-medium"
+											>No amount deducted</span
+										>
+									</div>
+									<p
+										class="text-[10px] text-slate-700 leading-normal"
+									>
+										Your bank's verification server did not
+										respond within 30 seconds. Your seat
+										allocation remains reserved for
+										<span class="text-amber-900 font-bold"
+											>14 minutes</span
+										>.
+									</p>
+									<div class="flex items-center gap-2 pt-1">
+										<button
+											class="px-2.5 py-1 rounded bg-amber-600 hover:bg-amber-700 text-white font-bold text-[10px] transition-colors shadow-xs"
+										>
+											Retry with Saved UPI
+										</button>
+										<button
+											class="px-2.5 py-1 rounded bg-white hover:bg-slate-50 text-slate-700 font-medium text-[10px] transition-colors border border-slate-300 shadow-2xs"
+										>
+											Switch to NetBanking
+										</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- How It Was Applied -->
+					<div
+						class="pt-2.5 border-t border-slate-200 flex items-center justify-between gap-2 text-[11px]"
+					>
+						<div class="flex items-center gap-1.5 text-slate-600">
+							<span class="font-bold text-slate-800"
+								>Applied in:</span
+							>
+							<span
+								>Fee checkout retry logic &amp; biometric
+								attendance sync timeouts</span
+							>
+						</div>
+						<span
+							class="text-[10px] font-mono font-semibold text-indigo-700 bg-indigo-50 px-2 py-0.5 rounded border border-indigo-200"
+							>Resilient UX</span
+						>
+					</div>
+				</article>
+			</div>
+			<!-- Footer Summary / Interview Pitch Note (Print Colophon Style) -->
+			<footer
+				class="mt-5 pt-3.5 border-t border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slate-500 relative z-10"
+			>
+				<div class="w-full flex justify-center items-center gap-2">
+					<span class="w-2 h-2 rounded-full bg-slate-900"></span>
+					<span class="text-slate-800 font-bold"
+						>Design Philosophy Summary:</span
+					>
+					<aside class="flex gap-1">
+						<span class="text-slate-600"
+							>Designing for institutional accountability, calm
+							workflows, and zero silent failures.</span
+						>
+						<span class="text-slate-600"
+							>These principles guide my approach to translating
+							complex workflows into clear, intuitive
+							interfaces.</span
+						>
+					</aside>
+				</div>
+			</footer>
+		</main>
+		<!-- Interactive JavaScript Logic -->
+		<script>
+			let p2Expanded = false;
+			let allExpanded = false;
+
+			function toggleP2() {
+				p2Expanded = !p2Expanded;
+				const details = document.getElementById("p2Details");
+				const btnText = document.getElementById("p2BtnText");
+				const icon = document.getElementById("p2Icon");
+
+				if (p2Expanded) {
+					details.classList.remove("hidden");
+					btnText.textContent = "Hide Breakdown";
+					icon.classList.add("rotate-180");
+				} else {
+					details.classList.add("hidden");
+					btnText.textContent = "Show Breakdown";
+					icon.classList.remove("rotate-180");
+				}
+			}
+
+			function toggleP1() {
+				toggleP2();
+			}
+
+			function toggleAllVisuals() {
+				allExpanded = !allExpanded;
+				const label = document.getElementById("viewToggleLabel");
+
+				if (allExpanded) {
+					if (!p2Expanded) toggleP2();
+					label.textContent = "Collapse Detailed Views";
+				} else {
+					if (p2Expanded) toggleP2();
+					label.textContent = "Expand Detailed Views";
+				}
+			}
+
+			function setRole(roleName) {
+				["admin", "staff", "parent"].forEach((r) => {
+					const el = document.getElementById("role-" + r);
+					const btn = document.getElementById("roleBtn-" + r);
+					if (el) el.classList.add("hidden");
+					if (btn) {
+						btn.className =
+							"px-2 py-0.5 rounded-md text-[10px] font-semibold text-slate-600 hover:text-slate-900 transition-all";
+					}
+				});
+
+				const activeEl = document.getElementById("role-" + roleName);
+				const activeBtn = document.getElementById(
+					"roleBtn-" + roleName,
+				);
+				if (activeEl) activeEl.classList.remove("hidden");
+				if (activeBtn) {
+					activeBtn.className =
+						"px-2 py-0.5 rounded-md text-[10px] font-bold bg-slate-900 text-white shadow-xs transition-all";
+				}
+			}
+		</script>
+	</body>
+</html>
